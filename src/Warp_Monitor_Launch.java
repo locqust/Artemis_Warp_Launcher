@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -254,11 +255,15 @@ public class Warp_Monitor_Launch extends javax.swing.JFrame {
             int connectport = (Integer.parseInt(port.getText()));
             String videos = (location.getText());
             
-            new Artemis_Warp_Monitor(host,connectport);
+        //try {
+            //  new Artemis_Warp_Monitor(host,connectport);
+            // } catch (IOException ex) {
+            //  Logger.getLogger(Warp_Monitor_Launch.class.getName()).log(Level.SEVERE, null, ex);
+            // }
+            Runtime.getRuntime().exec("java -jar Artemis_Warp_Monitor.jar host connectport");
         } catch (IOException ex) {
             Logger.getLogger(Warp_Monitor_Launch.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
     }//GEN-LAST:event_connectMouseClicked
 
     
